@@ -2,7 +2,7 @@
 
 namespace GildedRose.Console
 {
-    class Program
+    public class Program
     {
         static IList<Item> Items;
         static void Main(string[] args)
@@ -31,7 +31,15 @@ namespace GildedRose.Console
 
         }
 
-       
+     
+    }
 
+    public class Item
+    {
+        public string Name { get; set; }
+
+        public int SellIn { get; set; }
+
+        public int Quality { get; set; }
     }
 }

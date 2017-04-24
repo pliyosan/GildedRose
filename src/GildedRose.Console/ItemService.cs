@@ -6,13 +6,34 @@ using System.Threading.Tasks;
 
 namespace GildedRose.Console
 {
+
+    public static class ListItemExtension
+    {
+        public static IList<ItemModel> ToItemsModel(this IList<Item> items)
+        {
+            
+            return items.Select(i => new ItemModel
+            {
+                Name = i.Name,
+                Quality = i.Quality,
+                SellIn = i.SellIn
+            }).ToList();
+        }
+    }
+
+
     public class ItemService
     {
-        private readonly IList<Item> _items;
-
+        private IList<ItemModel> _items;
+        
         public ItemService(IList<Item> items)
         {
-            _items = items;
+            _items = items.Select(i => new ItemModel
+            {
+                Name = i.Name,
+                Quality = i.Quality,
+                SellIn = i.SellIn
+            }).ToList();
         }
 
         public void UpdateQuality()
@@ -24,6 +45,7 @@ namespace GildedRose.Console
                     if (_items[i].Quality > 0)
                     {
                         if (_items[i].Name != "Sulfuras, Hand of Ragnaros")
+
                         {
                             _items[i].Quality = _items[i].Quality - 1;
                         }

@@ -1,10 +1,12 @@
 using Xunit;
+using GildedRose.Console;
+using Shouldly;
 
 namespace GildedRose.Tests
 {
     using System.Collections.Generic;
     using System.Linq;
-    using GildedRose.Console;
+    
 
     public class ItemServiceShould
     {
@@ -31,24 +33,32 @@ namespace GildedRose.Tests
         public void Harness()
         {
             var service = new ItemService(Items);
-            service.UpdateQuality();
-            var expectedItems = new List<Item>
+            var originalItemModel = Items.Select(i => new ItemModel
             {
-                new Item {Name = "+5 Dexterity Vest", SellIn = 9, Quality = 19},
-                new Item {Name = "Aged Brie", SellIn = 1, Quality = 1},
-                new Item {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
-                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
-                new Item
+                Name = i.Name,
+                Quality = i.Quality,
+                SellIn = i.SellIn
+            }).ToList();
+
+            service.UpdateQuality();
+            int expectedQualityOfSulfuras = 80;
+            var expectedItems = new List<ItemModel>
+            {
+                new ItemModel {Name = "+5 Dexterity Vest", SellIn = 9, Quality = 19},
+                new ItemModel {Name = "Aged Brie", SellIn = 1, Quality = 1},
+                new ItemModel {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
+                new ItemModel {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
+                new ItemModel
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 14,
                     Quality = 21
                 },
-                new Item {Name = "Conjured Mana Cake", SellIn = 2, Quality = 5}
+                new ItemModel {Name = "Conjured Mana Cake", SellIn = 2, Quality = 5}
             };
 
             int index = 0;
-            foreach (var value in Items)
+            foreach (var value in originalItemModel)
             {
                 Assert.Equal(value.Name, expectedItems[index].Name);
                 Assert.Equal(value.Quality, expectedItems[index].Quality);
