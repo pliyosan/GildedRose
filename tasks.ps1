@@ -10,4 +10,4 @@ properties {
 
 Import-DefaultTasks Version, Clean, Build, Test
 
-Task Default -Depends Clean, Build, Test
+Task Default -Depends Clean, Build, Test -- GOD Knows what this will do
