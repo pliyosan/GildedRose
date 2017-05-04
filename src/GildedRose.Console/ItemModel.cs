@@ -2,17 +2,15 @@
 {
     public class ItemModel
     {
-
         private const int MIN_VALUE = 0;
         private const int MAX_VALUE = 50;
-
         private int _quality = 0;
 
         public string Name { get; set; }
 
         public int SellIn { get; set; }
 
-        public int Quality
+        public virtual int Quality
         {
             get
             {

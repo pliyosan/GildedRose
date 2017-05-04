@@ -18,7 +18,7 @@ namespace GildedRose.Tests
                 new ItemModel {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                 new ItemModel {Name = "Aged Brie", SellIn = 2, Quality = 0},
                 new ItemModel {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                new ItemModel {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                new LegendaryItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
                 new ItemModel
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
@@ -33,7 +33,6 @@ namespace GildedRose.Tests
         public void Harness()
         {
             var service = new ItemService(Items);
-
             service.UpdateQuality();
             int expectedQualityOfSulfuras = 80;
             var expectedItems = new List<ItemModel>
@@ -41,7 +40,7 @@ namespace GildedRose.Tests
                 new ItemModel {Name = "+5 Dexterity Vest", SellIn = 9, Quality = 19},
                 new ItemModel {Name = "Aged Brie", SellIn = 1, Quality = 1},
                 new ItemModel {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
-                new ItemModel {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
+                new LegendaryItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
                 new ItemModel
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",

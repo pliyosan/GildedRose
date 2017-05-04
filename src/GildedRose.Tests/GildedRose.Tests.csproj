@@ -62,7 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConjuredItemShould.cs" />
+    <Compile Include="ItemFactoryShould.cs" />
     <Compile Include="ItemShould.cs" />
+    <Compile Include="LegendaryItemShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ItemServiceShould.cs" />
   </ItemGroup>
