@@ -2,12 +2,6 @@
 {
     public class ItemModel
     {
-        //    public string Name { get; set; }
-
-        //    public int SellIn { get; set; }
-
-        //    public int Quality { get; set; }
-        //}
 
         private const int MIN_VALUE = 0;
         private const int MAX_VALUE = 50;
@@ -35,4 +29,5 @@
             }
         }
     }
+
 }

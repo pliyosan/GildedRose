@@ -4,11 +4,11 @@ namespace GildedRose.Console
 {
     public class Program
     {
-        static IList<Item> Items;
+
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
-            Items = new List<Item>
+            var Items = new List<Item>
             {
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                 new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},

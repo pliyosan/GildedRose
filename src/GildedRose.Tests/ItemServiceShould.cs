@@ -10,22 +10,22 @@ namespace GildedRose.Tests
 
     public class ItemServiceShould
     {
-        private IList<Item> Items;
+        private IList<ItemModel> Items;
         public ItemServiceShould()
         {
-            Items = new List<Item>
+            Items = new List<ItemModel>
             {
-                new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
-                new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
-                new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
-                new Item
+                new ItemModel {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                new ItemModel {Name = "Aged Brie", SellIn = 2, Quality = 0},
+                new ItemModel {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                new ItemModel {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                new ItemModel
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 15,
                     Quality = 20
                 },
-                new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                new ItemModel {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
         }
 
@@ -33,12 +33,6 @@ namespace GildedRose.Tests
         public void Harness()
         {
             var service = new ItemService(Items);
-            var originalItemModel = Items.Select(i => new ItemModel
-            {
-                Name = i.Name,
-                Quality = i.Quality,
-                SellIn = i.SellIn
-            }).ToList();
 
             service.UpdateQuality();
             int expectedQualityOfSulfuras = 80;
@@ -58,7 +52,11 @@ namespace GildedRose.Tests
             };
 
             int index = 0;
-            foreach (var value in originalItemModel)
+
+            var sulfuras = Items.First(x => x.Name.Equals("Sulfuras, Hand of Ragnaros"));
+            sulfuras.Quality.ShouldBe(expectedQualityOfSulfuras);
+
+            foreach (var value in Items)
             {
                 Assert.Equal(value.Name, expectedItems[index].Name);
                 Assert.Equal(value.Quality, expectedItems[index].Quality);
