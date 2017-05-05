@@ -27,7 +27,7 @@ namespace GildedRose.Console
                                           }
 
                           };
-            
+
             System.Console.ReadKey();
 
         }
@@ -36,7 +36,7 @@ namespace GildedRose.Console
         {
             for (var i = 0; i < Items.Count; i++)
             {
-
+                i++; //chris
             }
         }
 
