@@ -36,7 +36,7 @@ namespace GildedRose.Console
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                new Item();
+                i++; //chris
             }
         }
 
