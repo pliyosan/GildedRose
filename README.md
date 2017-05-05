@@ -42,6 +42,7 @@ method and Items property static if you like, we'll cover for you).
 
 Just for clarification, an item can never have its Quality increase 
 above 50, however "Sulfuras" is a legendary item and as such its 
+weiorgjerio
 Quality is 80 and it never alters.
 
 ## Getting Started
