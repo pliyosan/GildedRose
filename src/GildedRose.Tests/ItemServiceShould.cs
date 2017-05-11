@@ -32,6 +32,10 @@ namespace GildedRose.Tests
         [Fact]
         public void Harness()
         {
+            // Being Harness acting as our Controller
+            // Map to ItemModel using Factory
+            // Send that to the ItemService
+
             var service = new ItemService(Items);
             service.UpdateQuality();
             int expectedQualityOfSulfuras = 80;

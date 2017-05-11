@@ -15,7 +15,6 @@ namespace GildedRose.Tests
             var response = sut.CreateItem(name);
 
             Assert.IsType<LegendaryItem>(response);
-
         }
     }
 }

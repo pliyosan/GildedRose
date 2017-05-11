@@ -4,7 +4,6 @@ namespace GildedRose.Console
 {
     public class Program
     {
-
         static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
@@ -28,10 +27,7 @@ namespace GildedRose.Console
             app.UpdateQuality();
 
             System.Console.ReadKey();
-
         }
-
-     
     }
 
     public class Item

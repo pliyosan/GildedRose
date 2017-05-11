@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConjuredItemShould.cs" />
     <Compile Include="ItemFactoryShould.cs" />
     <Compile Include="ItemShould.cs" />
     <Compile Include="LegendaryItemShould.cs" />
