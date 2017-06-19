@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GildedRose.Console
+﻿namespace GildedRose.Console
 {
     public class ItemFactory
     {
-        public ItemModel CreateItem(string name)
+        public Item CreateItem(Item regularItem)
         {
-            switch (name)
+            switch (regularItem.Name)
             {
                 case "Sulfuras, Hand of Ragnaros":
-                    return new LegendaryItem();
+                    return new LegendaryRegularItem();
 
                 default:
-                    return new ItemModel();
+                    return new RegularItem();
             }
         }
 

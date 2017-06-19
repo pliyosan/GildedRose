@@ -9,10 +9,10 @@ namespace GildedRose.Console
 
     public static class ListItemExtension
     {
-        public static IList<ItemModel> ToItemsModel(this IList<Item> items)
+        public static IList<RegularItem> ToItemsModel(this IList<RegularItem> items)
         {
 
-            return items.Select(i => new ItemModel
+            return items.Select(i => new RegularItem
             {
                 Name = i.Name,
                 Quality = i.Quality,
@@ -24,22 +24,17 @@ namespace GildedRose.Console
 
     public class ItemService
     {
-        private IList<ItemModel> _items;
+        private IList<Item> _items;
 
-        public ItemService(IList<ItemModel> items)
-        {
-            _items = items;
-        }
         public ItemService(IList<Item> items)
         {
-            _items = items.ToItemsModel();
+            _items = items;
         }
 
         public void UpdateQuality()
         {
             for (var i = 0; i < _items.Count; i++)
             {
-
                 _items[i].UpdateQuality();
             }
         }

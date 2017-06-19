@@ -11,7 +11,7 @@ namespace GildedRose.Tests
         [InlineData(10, 80)]
         public void KeepQualityConstant(int actualQuality, int expectedQuality)
         {
-            var item = new LegendaryItem()
+            var item = new LegendaryRegularItem()
             {
                 Name = "Sulfuras, Hand of Ragnaros",
                 Quality = expectedQuality
@@ -26,7 +26,7 @@ namespace GildedRose.Tests
         [InlineData(80, 80)]
         public void Never_Has_To_Be_Sold(int actualSellin, int expectedSellin)
         {
-            var item = new LegendaryItem()
+            var item = new LegendaryRegularItem()
             {
                 Name = "Sulfuras, Hand of Ragnaros",
                 SellIn = actualSellin,

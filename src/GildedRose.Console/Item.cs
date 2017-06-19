@@ -1,31 +1,21 @@
-﻿namespace GildedRose.Console
-{
-    public class ItemModel
-    {
-        private const int MIN_VALUE = 0;
-        private const int MAX_VALUE = 50;
-        private int _quality = 0;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace GildedRose.Console
+{
+    public class Item
+    {
+        internal Item()
+        {
+            
+        }
+        public virtual int Quality { get; set; }
         public string Name { get; set; }
 
         public int SellIn { get; set; }
-
-        public virtual int Quality
-        {
-            get
-            {
-                return _quality;
-            }
-            set
-            {
-                if (value > MAX_VALUE)
-                    _quality = MAX_VALUE;
-                else if (value < MIN_VALUE)
-                    _quality = MIN_VALUE;
-                else
-                    _quality = value;
-            }
-        }
 
         public virtual void UpdateQuality()
         {
@@ -100,5 +90,4 @@
             }
         }
     }
-
 }

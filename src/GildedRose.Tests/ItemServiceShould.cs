@@ -10,22 +10,22 @@ namespace GildedRose.Tests
 
     public class ItemServiceShould
     {
-        private IList<ItemModel> Items;
+        private IList<Item> Items;
         public ItemServiceShould()
         {
-            Items = new List<ItemModel>
+            Items = new List<Item>
             {
-                new ItemModel {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
-                new ItemModel {Name = "Aged Brie", SellIn = 2, Quality = 0},
-                new ItemModel {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
-                new LegendaryItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
-                new ItemModel
+                new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
+                new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                new Item
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 15,
                     Quality = 20
                 },
-                new ItemModel {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
         }
 
@@ -33,25 +33,25 @@ namespace GildedRose.Tests
         public void Harness()
         {
             // Being Harness acting as our Controller
-            // Map to ItemModel using Factory
+            // Map to RegularItem using Factory
             // Send that to the ItemService
 
             var service = new ItemService(Items);
             service.UpdateQuality();
             int expectedQualityOfSulfuras = 80;
-            var expectedItems = new List<ItemModel>
+            var expectedItems = new List<Item>
             {
-                new ItemModel {Name = "+5 Dexterity Vest", SellIn = 9, Quality = 19},
-                new ItemModel {Name = "Aged Brie", SellIn = 1, Quality = 1},
-                new ItemModel {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
-                new LegendaryItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
-                new ItemModel
+                new Item {Name = "+5 Dexterity Vest", SellIn = 9, Quality = 19},
+                new Item {Name = "Aged Brie", SellIn = 1, Quality = 1},
+                new Item {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
+                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
+                new Item
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 14,
                     Quality = 21
                 },
-                new ItemModel {Name = "Conjured Mana Cake", SellIn = 2, Quality = 5}
+                new Item {Name = "Conjured Mana Cake", SellIn = 2, Quality = 5}
             };
 
             int index = 0;

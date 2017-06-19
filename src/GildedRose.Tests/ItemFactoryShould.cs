@@ -12,9 +12,9 @@ namespace GildedRose.Tests
         {
             var sut = new ItemFactory();
 
-            var response = sut.CreateItem(name);
+            var response = sut.CreateItem(new Item() {Name = name});
 
-            Assert.IsType<LegendaryItem>(response);
+            Assert.IsType<LegendaryRegularItem>(response);
         }
     }
 }

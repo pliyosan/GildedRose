@@ -4,7 +4,7 @@ using Xunit;
 
 namespace GildedRose.Tests
 {
-    public class ItemShould
+    public class RegularItemShould
     {
         const int MAX_QUALITY = 50;
         const int MIN_QUALITY = 0;
@@ -12,7 +12,7 @@ namespace GildedRose.Tests
         [Fact]
         public void Never_Have_Quality_Bigger_Than_Fifty()
         {
-            var item = new ItemModel();
+            var item = new RegularItem();
 
             int actualQuality = 51;
             item.Quality = actualQuality;
@@ -22,7 +22,7 @@ namespace GildedRose.Tests
         [Fact]
         public void Never_Have_Quality_Less_Than_Zero()
         {
-            var item = new ItemModel();
+            var item = new RegularItem();
 
             int actualQuality = -1;
             item.Quality = actualQuality;
@@ -32,7 +32,7 @@ namespace GildedRose.Tests
         [Fact]
         public void Have_Quality_BETWEEN_ZERO_AND_FIFITY()
         {
-            var item = new ItemModel();
+            var item = new RegularItem();
 
             int actualQuality = 1;
             item.Quality = actualQuality;
@@ -42,7 +42,7 @@ namespace GildedRose.Tests
         [Fact]
         public void Update_Quality()
         {
-            var item = new ItemModel();
+            var item = new RegularItem();
 
             int actualQuality = 1;
             item.Quality = actualQuality;
