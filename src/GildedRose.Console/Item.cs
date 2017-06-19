@@ -13,9 +13,9 @@ namespace GildedRose.Console
             
         }
         public virtual int Quality { get; set; }
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public int SellIn { get; set; }
+        public virtual int SellIn { get; set; }
 
         public virtual void UpdateQuality()
         {

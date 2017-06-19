@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Console
 {
-    public class LegendaryRegularItem : Item
+    public class LegendaryItem : Item
     {
         private const int CONSTANT_QUALITY = 80;
 

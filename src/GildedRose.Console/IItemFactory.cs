@@ -7,10 +7,19 @@
             switch (regularItem.Name)
             {
                 case "Sulfuras, Hand of Ragnaros":
-                    return new LegendaryRegularItem();
-
+                    return new LegendaryItem()
+                    {
+                        Name = regularItem.Name,
+                        Quality = regularItem.Quality,
+                        SellIn = regularItem.SellIn
+                    };
                 default:
-                    return new RegularItem();
+                    return new RegularItem()
+                    {
+                        Name = regularItem.Name,
+                        Quality = regularItem.Quality,
+                        SellIn = regularItem.SellIn
+                    };
             }
         }
 

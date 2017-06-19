@@ -53,7 +53,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="RegularItem.cs" />
     <Compile Include="ItemService.cs" />
-    <Compile Include="LegendaryRegularItem.cs" />
+    <Compile Include="LegendaryItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
