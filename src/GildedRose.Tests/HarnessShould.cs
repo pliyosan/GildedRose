@@ -8,15 +8,15 @@ namespace GildedRose.Tests
     using System.Linq;
     
 
-    public class ItemServiceShould
+    public class HarnessShould
     {
         private IList<Item> Items;
-        public ItemServiceShould()
+        public HarnessShould()
         {
             var itemFactory = new ItemFactory();
             Items = new List<Item>
             {
-                itemFactory.CreateItem(new  Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20}),
+                itemFactory.CreateItem(new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20}),
                 itemFactory.CreateItem(new Item {Name = "Aged Brie", SellIn = 2, Quality = 0}),
                 itemFactory.CreateItem(new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7}),
                 itemFactory.CreateItem(new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80}),
@@ -33,6 +33,20 @@ namespace GildedRose.Tests
         [Fact]
         public void Harness()
         {
+           var Items = new List<Item>
+            {
+                new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
+                new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
+                new Item {Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7},
+                new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80},
+                new Item
+                {
+                    Name = "Backstage passes to a TAFKAL80ETC concert",
+                    SellIn = 15,
+                    Quality = 20
+                },
+                new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+            };
             var service = new ItemService(Items);
             service.UpdateQuality();
             int expectedQualityOfSulfuras = 80;
@@ -77,7 +91,7 @@ namespace GildedRose.Tests
                 new RegularItem {Name = "Aged Brie", SellIn = 1, Quality = 1},
                 new RegularItem {Name = "Elixir of the Mongoose", SellIn = 4, Quality = 6},
                 new LegendaryItem {Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = expectedQualityOfSulfuras},
-                new RegularItem
+                new BackStagePassesItem()
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
                     SellIn = 14,
@@ -93,9 +107,9 @@ namespace GildedRose.Tests
 
             foreach (var value in Items)
             {
-                Assert.Equal(value.Name, expectedItems[index].Name);
-                Assert.Equal(value.Quality, expectedItems[index].Quality);
-                Assert.Equal(value.SellIn, expectedItems[index].SellIn);
+                Assert.Equal(expectedItems[index].Name, value.Name);
+                Assert.Equal(expectedItems[index].Quality, value.Quality);
+                Assert.Equal(expectedItems[index].SellIn, value.SellIn);
                 index++;
             }
         }

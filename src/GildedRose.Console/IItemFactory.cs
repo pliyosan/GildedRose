@@ -4,6 +4,16 @@
     {
         public Item CreateItem(Item regularItem)
         {
+
+            if (regularItem.Name.Contains("Backstage passes"))
+                return new BackStagePassesItem()
+                {
+                    Name = regularItem.Name,
+                    Quality = regularItem.Quality,
+                    SellIn = regularItem.SellIn
+                };
+
+
             switch (regularItem.Name)
             {
                 case "Sulfuras, Hand of Ragnaros":
@@ -13,6 +23,8 @@
                         Quality = regularItem.Quality,
                         SellIn = regularItem.SellIn
                     };
+                
+
                 default:
                     return new RegularItem()
                     {

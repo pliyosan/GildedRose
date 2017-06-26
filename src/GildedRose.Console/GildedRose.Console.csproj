@@ -49,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackStagePassesItem.cs" />
     <Compile Include="IItemFactory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="RegularItem.cs" />
