@@ -27,7 +27,8 @@ namespace GildedRose.Console
                                                       SellIn = 15,
                                                       Quality = 20
                                                   },
-                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
+                                              new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6},
+                                              new Item {Name = "Blake is great", SellIn = 100, Quality = 100}
                                           }
 
                           };
