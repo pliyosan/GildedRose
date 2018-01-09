@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 namespace GildedRose.Console
 {
     class Program
