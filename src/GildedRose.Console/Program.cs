@@ -7,7 +7,9 @@ namespace GildedRose.Console
         IList<Item> Items;
         static void Main(string[] args)
         {
-            System.Console.WriteLine("OMGHAI!");
+            System.Console.WriteLine("This is a new change!");
+            System.Console.WriteLine("09-Jan-2018");
+            
 
             var app = new Program()
                           {
