@@ -9,6 +9,8 @@ namespace GildedRose.Console
         {
             System.Console.WriteLine("This is a new change!");
             System.Console.WriteLine("09-Jan-2018");
+            System.Console.WriteLine("Another change");
+            
             
 
             var app = new Program()
