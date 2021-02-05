@@ -31,7 +31,7 @@ namespace GildedRose.Console
                                           }
 
                           };
-
+            
             System.Console.ReadKey();
 
         }
